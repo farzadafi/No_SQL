@@ -52,4 +52,9 @@ public class MongoRepository {
         MongoCollection<Document> mongoCollection = mongoDB.getCollection(collectionName);
         mongoCollection.insertOne(document);
     }
+
+    public void removeOneDocument(String collectionName,Document document){
+        MongoCollection<Document> mongoCollection = mongoDB.getCollection(collectionName);
+        mongoCollection.deleteOne(document);
+    }
 }
