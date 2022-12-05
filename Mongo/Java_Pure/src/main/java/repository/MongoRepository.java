@@ -1,6 +1,7 @@
 package repository;
 
 import com.mongodb.MongoClient;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoIterable;
@@ -56,5 +57,10 @@ public class MongoRepository {
     public void removeOneDocument(String collectionName,Document document){
         MongoCollection<Document> mongoCollection = mongoDB.getCollection(collectionName);
         mongoCollection.deleteOne(document);
+    }
+
+    public FindIterable<Document> findOneDocument(String collectionName, Document document){
+        MongoCollection<Document> mongoCollection = mongoDB.getCollection(collectionName);
+        return mongoCollection.find(document);
     }
 }
