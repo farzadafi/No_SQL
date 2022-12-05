@@ -1,6 +1,7 @@
 package service;
 
 import com.mongodb.Block;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoIterable;
 import org.bson.Document;
 import repository.MongoRepository;
@@ -81,5 +82,20 @@ public class MongoService {
         Document document = new Document();
         document.put("firstName",firstName);
         mongoRepository.removeOneDocument(collectionName,document);
+    }
+
+    public void findOneDocument(){
+        String collectionName,firstName;
+        System.out.println("Enter name of collection:");
+        collectionName = input.nextLine();
+        System.out.println("Enter firstName for find");
+        firstName = input.nextLine();
+        Document document = new Document();
+        document.put("firstName",firstName);
+        FindIterable<Document> mongoIterable = mongoRepository.findOneDocument(collectionName,document);
+        for (Document d:mongoIterable
+        ) {
+            System.out.println(d.toString());
+        }
     }
 }
