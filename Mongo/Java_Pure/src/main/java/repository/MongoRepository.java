@@ -28,4 +28,8 @@ public class MongoRepository {
     public String getCurrentDBName(){
         return mongoDB.getName();
     }
+
+    public MongoIterable<String> getAllCollection(){
+        return mongoDB.listCollectionNames();
+    }
 }
