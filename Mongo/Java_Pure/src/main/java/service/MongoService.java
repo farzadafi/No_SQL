@@ -50,4 +50,10 @@ public class MongoService {
         String collectionName = input.nextLine();
         mongoRepository.createCollection(collectionName);
     }
+
+    public void removeCollection(){
+        System.out.println("Enter name of collection:");
+        String collectionName = input.nextLine();
+        mongoRepository.removeCollection(collectionName);
+    }
 }
