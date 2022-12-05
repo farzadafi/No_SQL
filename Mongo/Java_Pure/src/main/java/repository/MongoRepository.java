@@ -1,9 +1,11 @@
 package repository;
 
 import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoIterable;
 import connection.SingletonMongoDB;
+import org.bson.Document;
 
 public class MongoRepository {
 
@@ -39,5 +41,10 @@ public class MongoRepository {
 
     public void createCollection(String collectionName){
         mongoDB.createCollection(collectionName);
+    }
+
+    public void removeCollection(String collectionName){
+        MongoCollection<Document> mongoCollection =  mongoDB.getCollection(collectionName);
+        mongoCollection.drop();
     }
 }
