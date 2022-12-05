@@ -38,4 +38,10 @@ public class MongoService {
         Block<String> printer = System.out::println;
         collectionName.forEach(printer);
     }
+
+    public void dropDB(){
+        System.out.println("Enter DB name:");
+        String DBName = input.nextLine();
+        mongoRepository.dropDB(DBName);
+    }
 }
