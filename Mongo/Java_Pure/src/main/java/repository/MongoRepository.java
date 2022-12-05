@@ -47,4 +47,9 @@ public class MongoRepository {
         MongoCollection<Document> mongoCollection =  mongoDB.getCollection(collectionName);
         mongoCollection.drop();
     }
+
+    public void createOneDocument(String collectionName,Document document){
+        MongoCollection<Document> mongoCollection = mongoDB.getCollection(collectionName);
+        mongoCollection.insertOne(document);
+    }
 }
