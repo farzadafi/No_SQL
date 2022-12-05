@@ -71,4 +71,15 @@ public class MongoService {
         document.put("lastName",lastName);
         mongoRepository.createOneDocument(collectionName,document);
     }
+
+    public void removeOneDocument(){
+        String collectionName,firstName;
+        System.out.println("Enter nam of collection:");
+        collectionName = input.nextLine();
+        System.out.println("Enter first name for remove:");
+        firstName = input.nextLine();
+        Document document = new Document();
+        document.put("firstName",firstName);
+        mongoRepository.removeOneDocument(collectionName,document);
+    }
 }
