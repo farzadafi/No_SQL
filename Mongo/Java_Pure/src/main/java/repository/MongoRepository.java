@@ -24,4 +24,8 @@ public class MongoRepository {
     public MongoIterable<String> getAllDBName(){
         return mongoClient.listDatabaseNames();
     }
+
+    public String getCurrentDBName(){
+        return mongoDB.getName();
+    }
 }
