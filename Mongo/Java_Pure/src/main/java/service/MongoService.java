@@ -2,6 +2,7 @@ package service;
 
 import com.mongodb.Block;
 import com.mongodb.client.MongoIterable;
+import org.bson.Document;
 import repository.MongoRepository;
 
 import java.util.Scanner;
@@ -55,5 +56,19 @@ public class MongoService {
         System.out.println("Enter name of collection:");
         String collectionName = input.nextLine();
         mongoRepository.removeCollection(collectionName);
+    }
+
+    public void createOneDocument(){
+        String collectionName,firstName,lastName;
+        System.out.println("Enter name of collection:");
+        collectionName = input.nextLine();
+        System.out.println("Enter your name:");
+        firstName = input.nextLine();
+        System.out.println("Enter your lastName:");
+        lastName = input.nextLine();
+        Document document = new Document();
+        document.put("firstName",firstName);
+        document.put("lastName",lastName);
+        mongoRepository.createOneDocument(collectionName,document);
     }
 }
