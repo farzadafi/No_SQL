@@ -32,4 +32,10 @@ public class MongoService {
     public String getCurrentDBName(){
         return mongoRepository.getCurrentDBName();
     }
+
+    public void getCollectionName(){
+        MongoIterable<String> collectionName = mongoRepository.getAllCollection();
+        Block<String> printer = System.out::println;
+        collectionName.forEach(printer);
+    }
 }
