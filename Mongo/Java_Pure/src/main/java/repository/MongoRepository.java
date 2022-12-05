@@ -36,4 +36,8 @@ public class MongoRepository {
     public void dropDB(String DBName){
         mongoClient.dropDatabase(DBName);
     }
+
+    public void createCollection(String collectionName){
+        mongoDB.createCollection(collectionName);
+    }
 }
