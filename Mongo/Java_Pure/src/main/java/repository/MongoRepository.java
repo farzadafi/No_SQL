@@ -2,6 +2,7 @@ package repository;
 
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.MongoIterable;
 import connection.SingletonMongoDB;
 
 public class MongoRepository {
@@ -18,5 +19,9 @@ public class MongoRepository {
         MongoDatabase mongoDatabase = mongoClient.getDatabase(name);
         mongoDB = mongoDatabase;
         mongoDatabase.createCollection("default");
+    }
+
+    public MongoIterable<String> getAllDBName(){
+        return mongoClient.listDatabaseNames();
     }
 }
