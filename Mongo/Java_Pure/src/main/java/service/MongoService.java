@@ -44,4 +44,10 @@ public class MongoService {
         String DBName = input.nextLine();
         mongoRepository.dropDB(DBName);
     }
+
+    public void createCollection(){
+        System.out.println("Enter collection name:");
+        String collectionName = input.nextLine();
+        mongoRepository.createCollection(collectionName);
+    }
 }
