@@ -28,4 +28,8 @@ public class MongoService {
         Block<String> printer = System.out::println;
         DBName.forEach(printer);
     }
+
+    public String getCurrentDBName(){
+        return mongoRepository.getCurrentDBName();
+    }
 }
