@@ -32,4 +32,8 @@ public class MongoRepository {
     public MongoIterable<String> getAllCollection(){
         return mongoDB.listCollectionNames();
     }
+
+    public void dropDB(String DBName){
+        mongoClient.dropDatabase(DBName);
+    }
 }
