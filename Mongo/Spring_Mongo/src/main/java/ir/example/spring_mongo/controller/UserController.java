@@ -41,4 +41,12 @@ public class UserController {
         UserDto userDto = UserMapper.INSTANCE.modelToDto(user);
         return ResponseEntity.ok(userDto);
     }
+
+    @GetMapping("/findByEmailRegex")
+    public ResponseEntity<UserDto> findByEmailRegex(@RequestParam String email){
+        User user = userServiceImpel.findByEmailRegex(email)
+                .orElseThrow(() -> new UserNotFoundException("not Found!"));
+        UserDto userDto = UserMapper.INSTANCE.modelToDto(user);
+        return ResponseEntity.ok(userDto);
+    }
 }
