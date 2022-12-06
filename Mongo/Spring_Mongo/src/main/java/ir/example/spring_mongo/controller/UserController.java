@@ -1,6 +1,7 @@
 package ir.example.spring_mongo.controller;
 
 import ir.example.spring_mongo.dto.UserDto;
+import ir.example.spring_mongo.exception.UserNotFoundException;
 import ir.example.spring_mongo.mapper.UserMapper;
 import ir.example.spring_mongo.model.User;
 import ir.example.spring_mongo.service.user.UserServiceImpel;
@@ -28,6 +29,15 @@ public class UserController {
     public ResponseEntity<UserDto> findByEmail(@RequestParam String email){
         User user = userServiceImpel.findByEmail(email)
                 .orElseThrow(() -> new UserNotFoundException("not Found!"));
+        UserDto userDto = UserMapper.INSTANCE.modelToDto(user);
+        return ResponseEntity.ok(userDto);
+    }
+
+    @GetMapping("/findByEmailWithCustomQuery")
+    public ResponseEntity<UserDto> findByEmailWithCustomQuery(@RequestParam String email){
+        User user = userServiceImpel.findByEmailWithCustomQuery(email);
+        if(user == null)
+            throw new UserNotFoundException("not found!");
         UserDto userDto = UserMapper.INSTANCE.modelToDto(user);
         return ResponseEntity.ok(userDto);
     }
