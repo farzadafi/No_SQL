@@ -41,4 +41,19 @@ public class UserServiceImpel implements UserService {
     public Optional<User> findByEmailRegex(String emailRegex) {
         return userRepository.findByEmailRegex(emailRegex);
     }
+
+    @Override
+    public User someCustomQuery() {
+/*      query.addCriteria(Criteria.where("name").regex("c$")); regex
+        query.addCriteria(Criteria.where("age").lt(50).gt(20)); lower than or grater than
+        query.with(Sort.by(Sort.Direction.ASC, "age")); sorting
+
+        final Pageable pageableRequest = PageRequest.of(0, 2); //paging
+        Query query = new Query();
+        query.with(pageableRequest);
+
+         and ...*/
+
+        return null;
+    }
 }

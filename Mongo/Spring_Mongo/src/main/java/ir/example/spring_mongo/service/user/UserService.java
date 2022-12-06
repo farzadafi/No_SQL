@@ -12,4 +12,6 @@ public interface UserService {
     User findByEmailWithCustomQuery(String email);
 
     Optional<User> findByEmailRegex(String emailRegex);
+
+    User someCustomQuery();
 }
