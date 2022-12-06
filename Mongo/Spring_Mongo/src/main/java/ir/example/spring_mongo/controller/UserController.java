@@ -4,10 +4,8 @@ import ir.example.spring_mongo.dto.UserDto;
 import ir.example.spring_mongo.mapper.UserMapper;
 import ir.example.spring_mongo.model.User;
 import ir.example.spring_mongo.service.user.UserServiceImpel;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
@@ -24,5 +22,13 @@ public class UserController {
         User user = UserMapper.INSTANCE.dtoToModel(userDto);
         userServiceImpel.insert(user);
         return "OK";
+    }
+
+    @GetMapping("/findByEmail")
+    public ResponseEntity<UserDto> findByEmail(@RequestParam String email){
+        User user = userServiceImpel.findByEmail(email)
+                .orElseThrow(() -> new UserNotFoundException("not Found!"));
+        UserDto userDto = UserMapper.INSTANCE.modelToDto(user);
+        return ResponseEntity.ok(userDto);
     }
 }
