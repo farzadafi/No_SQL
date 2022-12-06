@@ -5,10 +5,12 @@ import ir.example.spring_mongo.repository.UserRepository;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
 
+@Service
 public class UserServiceImpel implements UserService {
 
     private final UserRepository userRepository;
