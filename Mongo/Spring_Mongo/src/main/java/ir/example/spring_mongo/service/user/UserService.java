@@ -8,4 +8,6 @@ public interface UserService {
     void insert(User user);
 
     Optional<User> findByEmail(String email);
+
+    User findByEmailWithCustomQuery(String email);
 }
