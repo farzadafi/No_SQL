@@ -36,4 +36,9 @@ public class UserServiceImpel implements UserService {
         query.addCriteria(Criteria.where("email").is(email));
         return mongoTemplate.findOne(query,User.class);
     }
+
+    @Override
+    public Optional<User> findByEmailRegex(String emailRegex) {
+        return userRepository.findByEmailRegex(emailRegex);
+    }
 }

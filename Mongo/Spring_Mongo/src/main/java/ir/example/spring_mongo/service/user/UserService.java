@@ -10,4 +10,6 @@ public interface UserService {
     Optional<User> findByEmail(String email);
 
     User findByEmailWithCustomQuery(String email);
+
+    Optional<User> findByEmailRegex(String emailRegex);
 }
