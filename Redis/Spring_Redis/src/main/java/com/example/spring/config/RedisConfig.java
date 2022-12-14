@@ -25,4 +25,9 @@ public class RedisConfig {
         return template;
     }
 
+    @Bean
+    JedisConnectionFactory jedisConnectionFactory() {
+        return new JedisConnectionFactory();
+    }
+
 }
