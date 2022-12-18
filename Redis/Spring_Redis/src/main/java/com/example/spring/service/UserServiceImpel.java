@@ -2,8 +2,10 @@ package com.example.spring.service;
 
 import com.example.spring.model.User;
 import com.example.spring.repository.UserRepository;
+import org.springframework.stereotype.Service;
 
-public class UserServiceImpel implements UserService{
+@Service
+public class UserServiceImpel implements UserService {
 
     private final UserRepository repository;
 
