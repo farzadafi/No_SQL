@@ -4,10 +4,7 @@ import com.example.spring.dto.UserDto;
 import com.example.spring.mapper.UserMapper;
 import com.example.spring.model.User;
 import com.example.spring.service.UserServiceImpel;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
@@ -24,5 +21,11 @@ public class UserController {
         User user = UserMapper.INSTANCE.dtoToModel(userDto);
         userService.register(user);
         return "OK";
+    }
+
+    @GetMapping("/findUser")
+    public UserDto findUser(@RequestParam int id) {
+        User user = userService.findById(id);
+        return UserMapper.INSTANCE.modelToDto(user);
     }
 }
