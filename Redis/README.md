@@ -88,4 +88,25 @@ SUNION key [key ...]-------------combine two or more sets and returns the list o
 SINTER key [key ...]-------------intersect multiple sets
 SMOVE source destination member--move a member from one set to another
 SPOP key [count]-----------------remove and return one or multiple random members from a set
+
+<h4>Sorted Sets:</h4>
+A sorted set is similar to a regular set, but now each value has an associated score.
+This score is used to sort the elements in the set.
+
+ZADD key [NX|XX] [CH] [INCR] score member [score member ...]---add one or more members to a sorted set,
+or update its score if it already exists
+
+ZCARD key----------------------------get the number of members in a sorted set
+ZCOUNT key min max-------------------count the members in a sorted set with scores within the given values
+ZINCRBY key increment member---------increment the score of a member in a sorted set
+ZRANGE key start stop [WITHSCORES]---returns a subset of the sorted set
+ZRANK key member---------------------determine the index of a member in a sorted set
+ZREM key member [member ...]---------remove one or more members from a sorted set
+ZREMRANGEBYRANK key start stop-------remove all members in a sorted set within the given indexes
+ZREMRANGEBYSCORE key min max---------remove all members in a sorted set, by index, with scores ordered from high to low
+ZSCORE key member--------------------get the score associated with the given mmeber in a sorted set
+
+ZRANGEBYSCORE key min max [WITHSCORES] [LIMIT offset count]---return a range of members in a sorted set, by score
+
+<a href="https://gist.github.com/LeCoupa/1596b8f359ad8812c7271b5322c30946#file-redis_cheatsheet-bash">source</a>
 </pre>
