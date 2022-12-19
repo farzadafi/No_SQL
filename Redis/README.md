@@ -32,7 +32,7 @@ DEL key --------------------------delete key
 
 EXPIRE key 120--------------------key will be deleted in 120 seconds
 TTL key   
-################################################################################################################
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Integer or Float:
 
 INCR key--------------------------increment value in key
@@ -41,7 +41,7 @@ INCRBYFLOAT key increment---------increment the float value of a key by the give
 DECR key--------------------------decrement the integer value of key by one
 DECRBY key decrement--------------decrement the integer value of a key by the given number
 DEL key---------------------------delete key
-################################################################################################################
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Hashes:
 Hashes are maps between string fields and string values, so they are the perfect data type to represent objects.
 
@@ -59,5 +59,23 @@ HSTRLEN key field-------------get the length of the value of a hash field
 HVALS key  
 
 HMSET key field value [field value ...]---set multiple fields at once
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Lists.
+A list is a series of ordered values.
 
+
+RPUSH key value [value ...]------------put the new value at the end of the list
+RPUSHX key value-----------------------append a value to a list, only if the exists
+LPUSH key value [value ...]------------put the new value at the start of the list
+LRANGE key start stop------------------give a subset of the list
+LINDEX key index-----------------------get an element from a list by its index
+LINSERT key BEFORE|AFTER pivot value---insert an element before or after another element in a list
+LLEN key-------------------------------return the current length of the list
+LPOP key-------------------------------remove the first element from the list and returns it
+LSET key index value-------------------set the value of an element in a list by its index
+LTRIM key start stop-------------------trim a list to the specified range
+RPOP key-------------------------------remove the last element from the list and returns it
+RPOPLPUSH source destination-----------remove the last element in a list, prepend it to another list and return it
+BLPOP key [key ...] timeout------------remove and get the first element in a list, or block until one is available
+BRPOP key [key ...] timeout------------remove and get the last element in a list, or block until one is available
 </pre>
