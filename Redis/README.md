@@ -28,12 +28,11 @@ MSETNX key value [key value ...]--set multiple keys to multiple values, only if 
 GET key---------------------------get value in key
 GETRANGE key value----------------get a substring value of a key and return its old value
 MGET key [key ...]----------------get the values of all the given keys
-INCR key--------------------------increment value in key
 DEL key --------------------------delete key
 
 EXPIRE key 120--------------------key will be deleted in 120 seconds
 TTL key   
-
+################################################################################################################
 Integer or Float:
 
 INCR key--------------------------increment value in key
@@ -41,5 +40,24 @@ INCRBY key increment--------------increment the integer value of a key by the gi
 INCRBYFLOAT key increment---------increment the float value of a key by the given amount
 DECR key--------------------------decrement the integer value of key by one
 DECRBY key decrement--------------decrement the integer value of a key by the given number
-DEL key------------- - -----------delete key
+DEL key---------------------------delete key
+################################################################################################################
+Hashes:
+Hashes are maps between string fields and string values, so they are the perfect data type to represent objects.
+
+HGET key field----------------get the value of a hash field
+HGETALL key   ----------------get all the fields and values in a hash
+HSET key field value----------set the string value of a hash field
+HSETNX key field value--------set the string value of a hash field, only if the field does not exists
+
+HINCRBY key field increment---increment value in hash by X
+HDEL key field [field ...]----delete one or more hash fields
+HEXISTS key field-------------determine if a hash field exists
+HKEYS key---------------------get all the fields in a hash
+HLEN key----------------------get all the fields in a hash
+HSTRLEN key field-------------get the length of the value of a hash field
+HVALS key  
+
+HMSET key field value [field value ...]---set multiple fields at once
+
 </pre>
