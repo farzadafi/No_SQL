@@ -1,0 +1,5 @@
+view/Menu.class
+service/MongoService.class
+connection/SingletonMongoDB.class
+Application.class
+repository/MongoRepository.class

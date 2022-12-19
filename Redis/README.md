@@ -15,7 +15,7 @@ on windows: Actually I dont know where it is, but you can see this page😘
 
 <h3>Redis Cli Command</h3>
 <pre>
-String:
+<h4>String:</h4>
 
 APPEND key value------------------append a value to a key
 BITCOUNT key [start end]----------count set bits in a string
@@ -32,8 +32,8 @@ DEL key --------------------------delete key
 
 EXPIRE key 120--------------------key will be deleted in 120 seconds
 TTL key   
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Integer or Float:
+
+<h4>Integer or Float:</h4>
 
 INCR key--------------------------increment value in key
 INCRBY key increment--------------increment the integer value of a key by the given amount
@@ -41,8 +41,8 @@ INCRBYFLOAT key increment---------increment the float value of a key by the give
 DECR key--------------------------decrement the integer value of key by one
 DECRBY key decrement--------------decrement the integer value of a key by the given number
 DEL key---------------------------delete key
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Hashes:
+
+<h4>Hashes:</h4>
 Hashes are maps between string fields and string values, so they are the perfect data type to represent objects.
 
 HGET key field----------------get the value of a hash field
@@ -59,8 +59,8 @@ HSTRLEN key field-------------get the length of the value of a hash field
 HVALS key  
 
 HMSET key field value [field value ...]---set multiple fields at once
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Lists.
+
+<h4>Lists:</h4>
 A list is a series of ordered values.
 
 
