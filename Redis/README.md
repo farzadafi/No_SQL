@@ -34,7 +34,6 @@ EXPIRE key 120--------------------key will be deleted in 120 seconds
 TTL key   
 
 <h4>Integer or Float:</h4>
-
 INCR key--------------------------increment value in key
 INCRBY key increment--------------increment the integer value of a key by the given amount
 INCRBYFLOAT key increment---------increment the float value of a key by the given amount
@@ -44,7 +43,6 @@ DEL key---------------------------delete key
 
 <h4>Hashes:</h4>
 Hashes are maps between string fields and string values, so they are the perfect data type to represent objects.
-
 HGET key field----------------get the value of a hash field
 HGETALL key   ----------------get all the fields and values in a hash
 HSET key field value----------set the string value of a hash field
@@ -62,7 +60,6 @@ HMSET key field value [field value ...]---set multiple fields at once
 
 <h4>Lists:</h4>
 A list is a series of ordered values.
-
 
 RPUSH key value [value ...]------------put the new value at the end of the list
 RPUSHX key value-----------------------append a value to a list, only if the exists
