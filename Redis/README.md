@@ -33,4 +33,13 @@ DEL key --------------------------delete key
 
 EXPIRE key 120--------------------key will be deleted in 120 seconds
 TTL key   
+
+Integer or Float:
+
+INCR key--------------------------increment value in key
+INCRBY key increment--------------increment the integer value of a key by the given amount
+INCRBYFLOAT key increment---------increment the float value of a key by the given amount
+DECR key--------------------------decrement the integer value of key by one
+DECRBY key decrement--------------decrement the integer value of a key by the given number
+DEL key------------- - -----------delete key
 </pre>
