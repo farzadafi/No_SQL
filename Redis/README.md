@@ -75,4 +75,17 @@ RPOP key-------------------------------remove the last element from the list and
 RPOPLPUSH source destination-----------remove the last element in a list, prepend it to another list and return it
 BLPOP key [key ...] timeout------------remove and get the first element in a list, or block until one is available
 BRPOP key [key ...] timeout------------remove and get the last element in a list, or block until one is available
+
+<h4>Sets:</h4>
+A set is similar to a list, except it does not have a specific order and each element may only appear once. 
+
+SADD key member [member ...]-----add the given value to the set
+SCARD key------------------------get the number of members in a set
+SREM key member [member ...]-----remove the given value from the set
+SISMEMBER mySet value------------test if the given value is in the set.
+SMEMBERS mySet-------------------return a list of all the members of this set
+SUNION key [key ...]-------------combine two or more sets and returns the list of all elements
+SINTER key [key ...]-------------intersect multiple sets
+SMOVE source destination member--move a member from one set to another
+SPOP key [count]-----------------remove and return one or multiple random members from a set
 </pre>
