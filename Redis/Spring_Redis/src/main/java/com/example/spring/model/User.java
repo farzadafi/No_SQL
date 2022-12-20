@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.*;
 import org.springframework.data.redis.core.RedisHash;
+import org.springframework.data.redis.core.index.Indexed;
 
 @Getter
 @Setter
@@ -22,5 +23,6 @@ public class User {
 
     private String lastname;
 
+    @Indexed
     private String username;
 }
