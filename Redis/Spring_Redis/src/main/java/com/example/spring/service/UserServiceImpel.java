@@ -24,4 +24,10 @@ public class UserServiceImpel implements UserService {
         return repository.findById(id)
                 .orElseThrow( () -> new NotFoundException(String.format("%s not found", id)));
     }
+
+    @Override
+    public User findByUsername(String username) {
+        return repository.findByUsername(username)
+                .orElseThrow( () -> new NotFoundException(String.format("%s not found", username)));
+    }
 }
