@@ -28,4 +28,10 @@ public class UserController {
         User user = userService.findById(id);
         return UserMapper.INSTANCE.modelToDto(user);
     }
+
+    @GetMapping("/findUserByUsername")
+    public UserDto findUserByUsername(@RequestParam String username) {
+        User user = userService.findByUsername(username);
+        return UserMapper.INSTANCE.modelToDto(user);
+    }
 }
