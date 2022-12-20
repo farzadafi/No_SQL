@@ -24,7 +24,7 @@ public class UserController {
     }
 
     @GetMapping("/findUser")
-    public UserDto findUser(@RequestParam int id) {
+    public UserDto findUser(@RequestParam String id) {
         User user = userService.findById(id);
         return UserMapper.INSTANCE.modelToDto(user);
     }
